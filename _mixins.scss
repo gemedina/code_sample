@@ -1,0 +1,164 @@
+// Mixins
+
+// Bootstrap Button Variant
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+          border-color: darken($border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Background Cover Mixin
+
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+// Font Mixins
+
+@mixin serif-font {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin script-font {
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+@mixin body-font {
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin regular-font {
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin heading-font {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+@mixin titulos {
+  font-family: "Lato-Bold", Arial, Helvetica;
+  font-size: 30px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+}
+
+@mixin transition {
+    -webkit-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    -moz-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    -ms-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    -o-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); /* easeOutQuint */  
+    -webkit-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    -moz-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    -ms-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    -o-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+    transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); /* easeOutQuint */
+}
+
+
+
+@mixin primary_button {
+  background: $primaryColor;
+  color: #fff;
+  border-radius: 2px;
+  padding: 12px 20px;
+  display: inline-block;
+  margin: 15px 0 0 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Lato-Bold", Arial, Helvetica;
+  cursor: pointer;
+  @include transition();
+  border: solid 2px transparent;
+
+  &:hover {
+    border: solid 2px $primaryColor;
+    background: $primaryColor !important;
+    color: #fff;
+    box-shadow: 0px 1px 8px 0px #c9c9c9;
+  }
+
+}
+
+
+@mixin secondary_button {
+  background: $secondaryColor;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 2px;
+  margin: 6px 0 0 6px;
+
+  @include transition();
+  border: solid 2px transparent;
+
+  &:hover {
+    border: solid 2px $secondaryColor;
+    background: #fff !important;
+    color: $secondaryColor !important;
+    box-shadow: 0px 1px 8px 0px #c9c9c9;
+  }
+}
+
+@mixin big_button {
+  padding: 11px 50px 12px 50px;
+  border-radius: 2px;
+  margin: 20px 0 0 0;
+  font-family: "Lato-Regular", Arial, Helvetica;
+  font-size: 20px;
+}
+
+
